@@ -1,42 +1,31 @@
-# Недвижимость — лендинг и квиз
+# Real Estate — Quiz Landing Concepts
 
-Портфолио-концепции по предварительному запросу. Два детальных и три минималистичных направления.
+Desktop/mobile landing concepts, quiz questions, contact and completion screens.
 
-**Проект:** Дизайн-концепция.
+[Open gallery](https://memorim.github.io/real-estate-quiz-designs/)
 
-[Посмотреть галерею](https://memorim.github.io/real-estate-quiz-designs/)
+![Desktop composition](assets/01-01_city_desktop.png)
 
-![Компьютерная версия](assets/01-01_city_desktop.png)
+<img src="assets/01-01_city_mobile.png" width="320" alt="Mobile composition">
 
-<img src="assets/01-01_city_mobile.png" width="320" alt="Мобильная версия">
+## Implementation
 
-## Что сделано
-- 5 визуальных направления, отдельные компьютерные и мобильные композиции.
-- Типографика, цвета, расстановка акцентов и основной призыв к действию.
-- Адаптивная HTML-галерея для просмотра результатов без редактора.
+HTML/CSS gallery with image previews and editable design assets. The gallery can be served directly; no application build or secret configuration is needed. Desktop and mobile compositions are separate assets.
 
-## Материалы
-PNG и редактируемые SVG: два детальных и три минималистичных направления. [Вопросы и ответы квиза](QUIZ.md).
-
-## Запуск и проверка
-Проверено с Python 3.12.14 только для локального сервера и проверки файлов. Сама галерея использует HTML и CSS без сборки и зависимостей.
+## Local setup and checks
 
 ```bash
 python tests/check_assets.py
-python -m http.server 8080
+python .github/scripts/check_docs.py
+python -m http.server 8080 --bind 127.0.0.1
 ```
 
-Открыть http://localhost:8080. Кнопки навигации галереи работают; элементы внутри макетов остаются изображениями.
+Use Python 3.12.14, matching CI. Open `http://localhost:8080`. CI checks asset references and documentation; it does not certify interactive behavior inside images.
 
-## Реализация
-Макеты показаны в исходных пропорциях: компьютерная и мобильная композиции подготовлены отдельно. Галерея использует CSS Grid и обычные HTML-ссылки, дополнительные экраны раскрываются через details. Данные посетителей не собираются.
+## Scope and limits
 
-[Вопросы детальных концепций](QUIZ_DETAILED.md).
+The preview depicts a quiz; it does not submit leads, calculate mortgage eligibility or connect to Marquiz/CRM.
 
-## Демонстрация просмотра
-[Короткий GIF галереи](docs/demo.gif).
+No database, migrations or API are required for this static scope. Forms or integrations would be a separate implementation task.
 
-[Проверка файлов и запуска](docs/VERIFICATION.md).
-
-## Проверки и обновления
-CI проверяет проект и ссылки на локальные материалы. Dependabot предлагает обновления зависимостей и Actions. [История изменений](CHANGELOG.md).
+[Technical details](docs/TECHNICAL.md) · [Recorded checks](docs/VERIFICATION.md) · [Change history](CHANGELOG.md)
