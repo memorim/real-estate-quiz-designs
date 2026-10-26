@@ -1,18 +1,20 @@
-# Real Estate — Quiz Landing Concepts
+# Недвижимость — лендинги и квиз
 
-Desktop/mobile landing concepts, quiz questions, contact and completion screens.
+Концепции лендингов с компьютерными и мобильными экранами, вопросами квиза, контактной формой и завершением заявки.
 
-[Open gallery](https://memorim.github.io/real-estate-quiz-designs/)
+[Открыть проект](https://memorim.github.io/real-estate-quiz-designs/)
 
-![Desktop composition](assets/01-01_city_desktop.png)
+![Компьютерная версия](assets/01-01_city_desktop.png)
 
-<img src="assets/01-01_city_mobile.png" width="320" alt="Mobile composition">
+<img src="assets/01-01_city_mobile.png" width="320" alt="Мобильная версия">
 
-## Implementation
+## Устройство проекта
 
-HTML/CSS gallery with image previews and editable design assets. The gallery can be served directly; no application build or secret configuration is needed. Desktop and mobile compositions are separate assets.
+HTML/CSS-галерея, растровые превью и редактируемые SVG-макеты. Сайт можно обслуживать статическим HTTP-сервером. Сборка приложения и настройка секретов не требуются.
 
-## Local setup and checks
+## Локальный запуск и проверки
+
+Python 3.12.14, как в CI.
 
 ```bash
 python tests/check_assets.py
@@ -20,12 +22,14 @@ python .github/scripts/check_docs.py
 python -m http.server 8080 --bind 127.0.0.1
 ```
 
-Use Python 3.12.14, matching CI. Open `http://localhost:8080`. CI checks asset references and documentation; it does not certify interactive behavior inside images.
+Откройте `http://localhost:8080`. CI проверяет ссылки на файлы, наличие изображений и документацию. Макеты внутри PNG/SVG не становятся интерактивными от запуска галереи.
 
-## Scope and limits
+## Границы реализации
 
-The preview depicts a quiz; it does not submit leads, calculate mortgage eligibility or connect to Marquiz/CRM.
+Квиз представлен макетами. Отправка заявок, расчёт условий ипотеки, Marquiz и CRM не подключены.
 
-No database, migrations or API are required for this static scope. Forms or integrations would be a separate implementation task.
+База данных, миграции и API в текущем варианте не используются.
 
-[Technical details](docs/TECHNICAL.md) · [Recorded checks](docs/VERIFICATION.md) · [Change history](CHANGELOG.md)
+[Вопросы квиза](QUIZ.md) · [Детальный сценарий](QUIZ_DETAILED.md)
+
+[Технические сведения](docs/TECHNICAL.md) · [Выполненные проверки](docs/VERIFICATION.md) · [История изменений](CHANGELOG.md)
