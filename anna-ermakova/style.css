@@ -1,6 +1,7 @@
+@font-face{font-family:Inter;src:url('fonts/Inter.ttf') format('truetype');font-weight:100 900;font-display:swap}
 :root{color-scheme:light;--ink:#152c49;--muted:#68788b;--blue:#254bd6;--line:#e1e6ed}
 *{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--ink);font-family:"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:#fff;color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .page{max-width:1600px;margin:auto;padding:0 clamp(28px,5vw,80px)}
 .header{height:105px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px}
@@ -25,8 +26,7 @@ h1{margin:0 0 30px;font-size:clamp(44px,4.05vw,65px);font-weight:600;line-height
 a:focus-visible{outline:3px solid var(--blue);outline-offset:5px}
 .signature{margin:20px 0 0;font-size:16px;color:var(--muted)}
 .photo{grid-column:2;grid-row:1/4;position:relative;width:100%;aspect-ratio:1;margin:0;overflow:hidden;border-radius:6px;background:#edf1ec}
-/* The source contains two renders. Show only the complete upper courtyard panel. */
-.photo img{position:absolute;width:112.5%;max-width:none;height:auto;left:-6.25%;top:0;display:block}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:right center;display:block}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin:0;border-top:1px solid var(--line);padding:25px 0 28px}
 .facts dt{font-size:21px;font-weight:500;line-height:1.45}
 .facts dd{margin:12px 0 0;font-size:13px;color:var(--muted)}
@@ -41,3 +41,4 @@ a:focus-visible{outline:3px solid var(--blue);outline-offset:5px}
   .facts{grid-template-columns:1fr;gap:17px;padding:22px 0}.facts div{display:flex;align-items:baseline;justify-content:space-between;gap:12px}.facts dt{font-size:14px}.facts dd{margin:0;font-size:11px;text-align:right}.footer{display:block;padding:20px 0 26px;font-size:11px}.footer a{display:inline-block;margin-top:12px;font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){.cta{transition:none}}
+@media(min-width:1101px){.page{zoom:1.25}}

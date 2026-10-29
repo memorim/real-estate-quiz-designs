@@ -24,3 +24,4 @@ jobs:
           node-version: '24.18.0'
       - run: node tests/check_viewer.mjs
       - run: node tests/check_quiz.mjs
+      - run: node tests/check_quiz_design.mjs
