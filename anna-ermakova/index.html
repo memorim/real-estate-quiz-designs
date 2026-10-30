@@ -4,11 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Квартиры на Сортировке в Екатеринбурге от 4,2 млн рублей. Ответьте на три вопроса, чтобы получить подборку от Анны Ермаковой.">
-  <title>Ваша квартира. Ваши условия. | Анна Ермакова</title>
+  <meta name="description" content="Старт продаж квартир в Екатеринбурге от 4,2 млн рублей. Ответьте на три вопроса, чтобы получить подборку от Анны Ермаковой.">
+  <title>Старт продаж в Екатеринбурге | Анна Ермакова</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
   <script src="quiz.js" defer></script>
+  <style>
+    /* Сдвиг существующего изображения вниз без изменения размеров. */
+    .hero #title {font-size:clamp(34px,3.35vw,48px);letter-spacing:-1.3px}
+    .hero .photo.custom-hero{aspect-ratio:1.2 / 1;width:calc(100% + 56px);margin:26px 0 0 -56px;transform:translateY(38px)}
+    .hero .photo.custom-hero img{object-position:12% center}
+    @media(max-width:700px){
+      .hero #title{font-size:clamp(30px,7.6vw,38px);letter-spacing:-.7px}
+      .hero .photo.custom-hero{width:100%;margin:26px 0 0;aspect-ratio:1 / 1;transform:none}
+      .hero .photo.custom-hero img{object-position:18% center}
+    }
+  </style>
 </head>
 <body>
   <div class="page">
@@ -22,9 +33,9 @@
     <main>
       <section class="hero" aria-labelledby="title">
         <div class="intro">
-          <p class="eyebrow">Подбор новостройки</p>
-          <h1 id="title">Ваша квартира.<br>Ваши условия.</h1>
-          <p class="price">На Сортировке от 4,2 млн ₽</p>
+          <p class="eyebrow">Екатеринбург</p>
+          <h1 id="title">СТАРТ ПРОДАЖ.<br>ДЕШЕВЛЕ НЕ НАЙДЁТЕ!</h1>
+          <p class="price">Квартиры от 4,2 млн.руб.</p>
           <p class="description">Ответьте на 3 вопроса — подберём<br class="desktop-break"> варианты под ваши пожелания.</p>
         </div>
         <ul class="benefits" aria-label="Что вы получите">
@@ -38,8 +49,8 @@
           </a>
           <p class="signature">Подбор с Анной Ермаковой</p>
         </div>
-        <figure class="photo">
-          <img src="tower.png" alt="Высотный жилой дом и благоустроенный двор" width="1642" height="958" fetchpriority="high">
+        <figure class="photo custom-hero">
+          <img src="hero-courtyard.webp" alt="Визуализация жилого комплекса с благоустроенным двором" width="1625" height="968" fetchpriority="high" >
         </figure>
       </section>
       <dl class="facts">
