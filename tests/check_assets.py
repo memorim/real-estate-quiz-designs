@@ -1,21 +1,21 @@
 from html.parser import HTMLParser
 from pathlib import Path
-from struct import unpack
+from urllib.parse import urlsplit
 root=Path(__file__).resolve().parents[1]
+landing=root/"anna-ermakova"
 class Assets(HTMLParser):
     def handle_starttag(self,tag,attrs):
+        attrs=dict(attrs)
         if tag=="img":
-            attrs=dict(attrs)
-            src=attrs["src"]
             assert attrs.get("alt", "").strip(), "Missing image description"
-            with (root/src).open("rb") as image:
-                header=image.read(24)
-            assert header.startswith(b"\x89PNG\r\n\x1a\n"), src
-            natural=unpack(">II",header[16:24])
-            assert (int(attrs.get("width",0)),int(attrs.get("height",0)))==natural, src
-            assert (root/src).is_file(),src
+        for name in ("src", "href"):
+            url=urlsplit(attrs.get(name,""))
+            if not url.scheme and url.path:
+                assert (landing/url.path).exists(),url.path
 parser=Assets()
-parser.feed((root/"index.html").read_text(encoding="utf-8"))
+parser.feed((landing/"index.html").read_text(encoding="utf-8"))
 assert (root/"README.md").exists()
-assert len(list((root/"assets").glob("*.png")))>=2
-print("Gallery assets and README: OK")
+assert not (root/"index.html").exists(), "The gallery must not be published"
+assert not (root/"assets").exists(), "Remove unused gallery assets"
+assert (root/".nojekyll").exists(), "Do not generate a website from the root README"
+print("Landing assets and removed gallery: OK")

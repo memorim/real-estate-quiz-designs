@@ -1,18 +1,18 @@
-# Недвижимость - лендинги и квиз
+# Анна Ермакова — квартиры на Сортировке
 
-Концепции лендингов с компьютерными и мобильными экранами, вопросами квиза, контактной формой и завершением заявки.
+Рабочий адаптивный лендинг с квизом Marquiz: подбор квартиры, бюджет, способ покупки и контактная форма.
 
-[Открыть проект](https://memorim.github.io/real-estate-quiz-designs/)
+[Открыть лендинг](https://memorim.github.io/real-estate-quiz-designs/anna-ermakova/) · [Версия на Render](https://anna-ermakova.onrender.com/)
 
-[Лендинг Анны Ермаковой с квизом Marquiz](https://memorim.github.io/real-estate-quiz-designs/anna-ermakova/) - отдельная рабочая страница на основе выбранной концепции. [Подключение и проверка](anna-ermakova/README.md).
+[Подключение и проверка квиза](anna-ermakova/README.md). Галерея примерных дизайнов удалена; сайт находится только в `anna-ermakova/`.
 
-![Компьютерная версия](assets/01-01_city_desktop.png)
+![Компьютерная версия](docs/desktop.png)
 
-<img src="assets/01-01_city_mobile.png" width="320" alt="Мобильная версия">
+<img src="docs/mobile.png" width="320" alt="Мобильная версия">
 
 ## Устройство проекта
 
-HTML/CSS-галерея, растровые превью и редактируемые SVG-макеты. Сайт можно обслуживать статическим HTTP-сервером. Сборка приложения и настройка секретов не требуются.
+HTML, CSS и JavaScript без сборщика. Квиз принадлежит проекту Анны в Marquiz; контакты и заявки обрабатывает Marquiz. Если виджет не загрузился, кнопка открывает тот же квиз по прямой ссылке. Секретов в репозитории нет.
 
 ## Локальный запуск и проверки
 
@@ -20,13 +20,12 @@ Python 3.12.14, как в CI.
 
 ```bash
 python tests/check_assets.py
+node tests/check_quiz.mjs
+node tests/check_quiz_design.mjs
 python .github/scripts/check_docs.py
 python -m http.server 8080 --bind 127.0.0.1
 ```
 
-Откройте `http://localhost:8080`. CI проверяет ссылки на файлы, наличие изображений и документацию. Макеты внутри PNG/SVG не становятся интерактивными от запуска галереи.
-
-
-[Вопросы квиза](QUIZ.md) · [Детальный сценарий](QUIZ_DETAILED.md)
+Откройте `http://localhost:8080/anna-ermakova/`. CI проверяет ресурсы лендинга, открытие квиза, резервную ссылку, прогресс и документацию.
 
 [Технические сведения](docs/TECHNICAL.md) · [Выполненные проверки](docs/VERIFICATION.md) · [История изменений](CHANGELOG.md)
