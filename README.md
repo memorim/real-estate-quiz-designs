@@ -4,7 +4,7 @@
 
 [Открыть лендинг](https://memorim.github.io/real-estate-quiz-designs/anna-ermakova/) · [Версия на Render](https://anna-ermakova.onrender.com/)
 
-[Подключение и проверка квиза](anna-ermakova/README.md). Галерея примерных дизайнов удалена; сайт находится только в `anna-ermakova/`.
+[Подключение и проверка квиза](anna-ermakova/README.md).
 
 ![Компьютерная версия](docs/desktop.png)
 
